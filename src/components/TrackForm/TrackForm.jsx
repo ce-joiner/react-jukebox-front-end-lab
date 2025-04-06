@@ -12,7 +12,8 @@ const TrackForm = () => {
   // State for form data, initialized with empty values
   const [formData, setFormData] = useState({
     title: '',
-    artist: ''
+    artist: '',
+    coverArtUrl: ''
   });
   // State for any form submission or loading errors
   const [error, setError] = useState(null);
@@ -105,6 +106,17 @@ const TrackForm = () => {
             value={formData.artist}
             onChange={handleChange}
             required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="coverArtUrl">Cover Art URL:</label>
+          <input
+            type="text"
+            id="coverArtUrl"
+            name="coverArtUrl"
+            value={formData.coverArtUrl}
+            onChange={handleChange}
+            placeholder="https://example.com/cover.jpg"
           />
         </div>
         <div className="form-actions">
