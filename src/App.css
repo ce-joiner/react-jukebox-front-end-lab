@@ -1,42 +1,217 @@
-#root {
-  max-width: 1280px;
+/* App.css */
+:root {
+  --background-color: #191919;
+  --container-color: #222222;
+  --track-item-color: #2c2c2c;
+  --text-color: #ffffff;
+  --accent-color: #ff3b30;
+  --artist-color: #ff6b41; /* For the artist names in color */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+}
+
+/* Header and Add Track Button */
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.add-track-btn {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.add-track-btn:hover {
+  opacity: 0.9;
+}
+
+/* TrackList Component Styles */
+.track-list {
+  background-color: var(--container-color);
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.track-list h2 {
+  color: var(--accent-color);
+  text-align: center;
+  font-size: 20px;
+  margin: 0 0 20px 0;
+}
+
+/* Grid layout for track items */
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.track-item {
+  background-color: var(--track-item-color);
+  border-radius: 6px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.track-info {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.track-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* Colored artist name */
+.artist-name {
+  color: var(--artist-color);
+  font-weight: bold;
+}
+
+.track-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.track-buttons button {
+  flex: 1;
+  padding: 6px 0;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+}
+
+.play-btn {
+  background-color: var
+}
+
+/* Now Playing Component Styles */
+.now-playing {
+  background-color: var(--container-color);
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px; /* Set a maximum width */
+  margin: 0 auto; /* Center the container */
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.now-playing h2 {
+  color: var(--accent-color);
+  font-size: 20px;
+  margin: 0 0 15px 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.now-playing-details {
+  padding-left: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.now-playing .title-label {
+  font-weight: bold;
+  margin-right: 5px;
 }
 
-.card {
-  padding: 2em;
+.now-playing .artist-label {
+  font-weight: bold;
+  margin-right: 5px;
+  margin-top: 5px;
+  display: inline-block;
 }
 
-.read-the-docs {
-  color: #888;
+/* TrackForm Component Styles */
+.track-form-container {
+  background-color: var(--container-color);
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.track-form h2 {
+  text-align: center;
+  color: var(--accent-color);
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: var(--text-color);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.submit-btn {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #333;
+  color: white;
+}
+
+.error-message {
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 15px;
 }
